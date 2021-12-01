@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: antiquewhite;
+}
+
+
+.card {
+  position: relative;
+  width: 420px;
+  height: 440px;
+  transition: transform 0.5s;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.front-page1,.front-page2, .back-page1, .back-page2 {
+  background-image: url(../img/ornate-3068591.png);
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.back-page1{
+    font-size: x-small;
+    letter-spacing: 4.4px;
+}
+.front-page2{
+    font-size: x-small;
+    letter-spacing: 3px;
+}
+
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+  border-left: 3px solid rgb(247, 201, 159);
+}
+
+.back {
+  z-index: 0;
+}
+
+.front-side,
+.back-side {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-side {
+  transform: rotateY(180deg);
+}
+
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+#p1 {
+  z-index: 3;
+}
+
+#p2 {
+  z-index: 2;
+}
+
+#p3 {
+  z-index: 1;
+}
